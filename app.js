@@ -53,7 +53,7 @@ var getNewMusic = function(search){
 	 })
      .fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
-		/*$('.search-results').append(errorElem);*/
+		$('.search-results').append(errorElem);
 		});
 
 
@@ -84,7 +84,7 @@ var getRelatedArtists = function(artist){
 	 })
      .fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
-		/*$('.search-results').append(errorElem);*/
+		$('.search-results').append(errorElem);
 		});
 
 
@@ -107,13 +107,31 @@ var getRelatedTracks = function(artist){
 
 	 	console.log(artist);
 
+	 	var widget = showSongs(artist);
+		$('.results').append(widget);
+
+	 
+
+
 	 })
-	 /*
+	 
      .fail(function(jqXHR, error, errorThrown){
 		var errorElem = showError(error);
-		/*$('.search-results').append(errorElem);
-		});*/
+		$('.search-results').append(errorElem);
+		});
 };
+
+
+var showSongs = function(artist){
+	
+	var result = $('.templates .songs').clone();
+	var songWidget = result.find('.frame');
+	songWidget.attr('src', "https://embed.spotify.com/?uri=" + artist.uri);
+	console.log(artist.uri);
+
+	return result;
+
+}
 
 var getURI = function(result){
 	var uri = result.tracks[0].uri;
@@ -153,9 +171,9 @@ var getTracks = function(result){
 
 
 // takes error string and turns it into displayable DOM element
-/*var showError = function(error){
+var showError = function(error){
 	var errorElem = $('.templates .error').clone();
 	var errorText = '<p>' + error + '</p>';
 	errorElem.append(errorText);
-};*/
+};
 
