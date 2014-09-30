@@ -1,8 +1,6 @@
 $(document).ready( function() {
 
-id = new Array();
-names = new Array();
-tracks = new Array();
+
 
 function Artist(id, names, track){
 	id = this.id, 
@@ -20,6 +18,8 @@ artists = [
 
 
 $('.spotifySearch').submit( function(event){
+
+	$('.results').val('');
 		// get the value of the artist the user submitted
 		var search = $(this).find("input[name='search']").val();
 		getNewMusic(search);
@@ -125,9 +125,14 @@ var getRelatedTracks = function(artist){
 var showSongs = function(artist){
 	
 	var result = $('.templates .songs').clone();
+
 	var songWidget = result.find('.frame');
 	songWidget.attr('src', "https://embed.spotify.com/?uri=" + artist.uri);
 	console.log(artist.uri);
+
+	var title = result.find('.name');
+	title.text(artist.names);
+
 
 	return result;
 

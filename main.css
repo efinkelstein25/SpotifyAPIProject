@@ -9,3 +9,7 @@ background-size: cover;
 .hidden{
 	display: none;
 }
+
+.name{
+	margin: 5px;
+}
