@@ -19,7 +19,7 @@ artists = [
 
 $('.spotifySearch').submit( function(event){
 
-	$('.results').val('');
+	    $('.results').html('');
 		// get the value of the artist the user submitted
 		var search = $(this).find("input[name='search']").val();
 		getNewMusic(search);
