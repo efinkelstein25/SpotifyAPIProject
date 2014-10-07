@@ -46,20 +46,20 @@ body{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: rgba(249, 162, 187, .7);
+	background-color: rgba(244, 189, 201, .8);
 	border: 1px double #565454;
 }
 
 
 #par, #intro, #intro2, #login{
 	margin:5px;
-	color: #565454;
+	color:#565454;
 	
 	text-shadow:
-    -.2px -.2px 0 #000,
-    .2px -.2px 0 #000,
-    -.2px .2px 0 #000,
-    .2px .2px 0 #000; 
+    -.6px -.6px 0 #A8ADAF,
+    .6px -.6px 0 #A8ADAF,
+    -.6px .6px 0 #A8ADAF,
+    .6px .6px 0 #A8ADAF; 
 }
 
 
