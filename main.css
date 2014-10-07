@@ -10,7 +10,7 @@ background-size: cover;
 body{
 	
 	height: 100%;
-	font-family: 'Lucinda Sans Unicode', sans-serif;
+	font-family: "Courier New", Courier, monospace;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -30,12 +30,38 @@ body{
     1px 1px 0 #000; 
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: "Courier New", Courier, monospace
     
 }
 
-.description{
-	margin-bottom: 30px;
+#search{
+	display: inline;
 }
+
+.description{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 15px;
+	margin-bottom: 30px;
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(249, 162, 187, .7);
+	border: 1px double #565454;
+}
+
+
+#par, #intro, #intro2, #login{
+	margin:5px;
+	color: #565454;
+	
+	text-shadow:
+    -.2px -.2px 0 #000,
+    .2px -.2px 0 #000,
+    -.2px .2px 0 #000,
+    .2px .2px 0 #000; 
+}
+
 
 .name{
 	margin: 5px;
@@ -50,7 +76,8 @@ body{
 }
 
 .songs{
-	background-color: rgba(251, 152, 181, .7);
+	background-color: rgba(235, 235, 235, .7);
+	border: 1px double black;
 	width: 450px;
 	margin-left: auto;
 	margin-right: auto;
