@@ -34,19 +34,16 @@ body{
     
 }
 
-#search{
-	display: inline;
-}
 
 .description{
 	font-family: "Courier New", Courier, monospace;
 	font-size: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	width: 500px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: rgba(235, 235, 235, .7);
+	background-color: rgba(235, 235, 235, .85);
 	border: 1px double #565454;
 }
 
@@ -54,12 +51,12 @@ body{
 #par, #intro, #intro2, #login{
 	margin:5px;
 	color:#565454;
-	
-	text-shadow:
+	/*text-shadow:
     -.6px -.6px 0 #A8ADAF,
     .6px -.6px 0 #A8ADAF,
     -.6px .6px 0 #A8ADAF,
-    .6px .6px 0 #A8ADAF; 
+    .6px .6px 0 #A8ADAF; */
+
 }
 
 
@@ -83,7 +80,8 @@ body{
 	margin-right: auto;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	margin-bottom: 10px;
-	margin-top:10px;
+	
+	margin-top: 15px;
+	
 }
 
