@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Spotify API Hack</title>
+	<title>Suggestify</title>
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="reset.css">
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="app.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 	
-<div id = "header"> PUTINNAME </div>	
+<div id = "header"> Suggestify </div>	
 <div class = "description"> 
 	<p id = "par">Welcome!</p> 
-	<p id = "intro">PUTINNAME will help you discover new music based on artists you already know and love. </p>
+	<p id = "intro">Suggestify will help you discover new music based on artists you already know and love. </p>
 	<p id = "intro2">Search one of your favorites and hear 3 new songs instantly!</p>  
 
 	<p id = "login"> *If you have Spotify, login so that you can easily play the songs*</p>
-</div>
+
 
 <form class="spotifySearch" onsubmit="return false;">
 				<input type="text" placeholder='Search artist e.g., "Pink Martini" or "Lily Allen"' name="search" size="50" autofocus required>
-				<input type="submit" value="Submit">
+				<input id = "button" type="submit" value="Submit">
 </form>
+
+</div>
 
 <div class="results-container">
 			<div class="search-results"></div>
@@ -36,7 +39,7 @@
 		
 		<div class = "name"></div>
 		
-		<iframe class = "frame" src="" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+		<iframe class = "frame" src="" width="300" height="80" ></iframe>
 	</div>
 	
 <div class="error">
@@ -44,7 +47,7 @@
 </div>
 </div>
 
-</div>
+
 
 </body>
 </html>

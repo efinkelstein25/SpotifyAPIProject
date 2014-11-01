@@ -105,8 +105,6 @@ var getRelatedTracks = function(artist){
 	 	artist.tracks = getTrack(result);
 	 	artist.uri = getURI(result);
 
-	 	console.log(artist);
-
 	 	var widget = showSongs(artist);
 		$('.results').append(widget);
 

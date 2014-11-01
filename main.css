@@ -10,7 +10,8 @@ background-size: cover;
 body{
 	
 	height: 100%;
-	font-family: "Courier New", Courier, monospace;
+	/*font-family: "Courier New", Courier, monospace;*/
+	font-family: Times;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -23,23 +24,27 @@ body{
 	color: white;
 	font-size: 50px;
 	font-weight: bold;
-	text-shadow:
+	font-family: 'Montserrat', sans-serif;
+	/*text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000; 
+    1px 1px 0 #000; */
+    text-shadow: 
+    2px 1px 0 #000,
+    0 2px 1px #000
+    ;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: "Courier New", Courier, monospace
     
 }
 
 
 .description{
-	font-family: "Courier New", Courier, monospace;
+	font-family: 'Neuton', serif;
 	font-size: 15px;
 	margin-bottom: 20px;
-	width: 500px;
+	width: 575px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -49,7 +54,7 @@ body{
 
 
 #par, #intro, #intro2, #login{
-	margin:5px;
+	margin:8px;
 	color:#565454;
 	/*text-shadow:
     -.6px -.6px 0 #A8ADAF,
@@ -80,8 +85,21 @@ body{
 	margin-right: auto;
 	padding-bottom: 10px;
 	padding-top: 10px;
-	
 	margin-top: 15px;
-	
+	font-family: 'Neuton', serif;
 }
+
+.spotifySearch{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#button{
+	font-family: 'Neuton', serif;
+	background-color: #DCB1B3;
+	font-size: 15px;
+	border-radius: 5px;
+	color:#565454;
+}
+
 
