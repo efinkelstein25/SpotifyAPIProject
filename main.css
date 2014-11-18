@@ -3,14 +3,15 @@ html, body{
 	width: 100%;
 	min-width: 950px;
 }
+
 html{
 background: url(record-background.jpg) no-repeat center center fixed;
 background-size: cover;
 }
+
 body{
 	
 	height: 100%;
-	/*font-family: "Courier New", Courier, monospace;*/
 	font-family: Times;
 	text-align: center;
 	margin-left: auto;
@@ -25,11 +26,6 @@ body{
 	font-size: 50px;
 	font-weight: bold;
 	font-family: 'Montserrat', sans-serif;
-	/*text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; */
     text-shadow: 
     2px 1px 0 #000,
     0 2px 1px #000
@@ -38,7 +34,6 @@ body{
     margin-bottom: 20px;
     
 }
-
 
 .description{
 	font-family: 'Neuton', serif;
@@ -52,29 +47,16 @@ body{
 	border: 1px double #565454;
 }
 
-
 #par, #intro, #intro2, #login{
 	margin:8px;
 	color:#565454;
-	/*text-shadow:
-    -.6px -.6px 0 #A8ADAF,
-    .6px -.6px 0 #A8ADAF,
-    -.6px .6px 0 #A8ADAF,
-    .6px .6px 0 #A8ADAF; */
-
 }
-
 
 .name{
 	margin: 5px;
 	color: #2C2B2B;
 	font-size: 20px;
 	font-weight: bold;
-	/*text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000; */
 }
 
 .songs{

@@ -1,12 +1,11 @@
 $(document).ready( function() {
 
-
-
+//Artist object that will Arist information 
 function Artist(id, names, track){
-	id = this.id, 
-	names = this.names, 
-	tracks = this.tracks;
-	uri = this.uri;
+	id = this.id, //Spotify ID used to pull artist info
+	names = this.names, //Artist name
+	tracks = this.tracks; //song by artist
+	uri = this.uri; //link to artist track used in iFrame
 };
 
 artists = [
@@ -28,10 +27,7 @@ $('.spotifySearch').submit( function(event){
 }); /*end docuemnt ready*/
 
 
-
 var getNewMusic = function(search){
- /*artist's ids - original artist first, then 3 recommended artists*/
-
 // the parameters we need to pass in our request to Spotify's API 
 //to get the artist's ID
 	var request = {q: search,
@@ -45,20 +41,25 @@ var getNewMusic = function(search){
 		type: "GET",
 		})				
      .done(function(result){
-     	artists[0].id = getOriginalArtistID(result);
-     	artists[0].names = getOriginalArtistName(result);
-     
-     	getRelatedArtists(artists[0].id);
-   
+
+     	if (result.artists.items.length == 0){
+     		//if the artist searched for doesn't exist in Spotify
+     		alert("Whoops! Looks like this artist doesn't exist in Spotify. Try again!");
+     	}
+     	else{
+     		artists[0].id = getOriginalArtistID(result);
+     	    artists[0].names = getOriginalArtistName(result);
+        	getRelatedArtists(artists[0].id);
+     	}
 	 })
-     .fail(function(jqXHR, error, errorThrown){
-		var errorElem = showError(error);
+     .fail(function(result){
+		var errorElem = showError(result);
 		$('.search-results').append(errorElem);
 		});
-
-
 }; /*close getNewMusic*/
 
+
+/*Gets top 3 related artists to the artist searched*/
 var getRelatedArtists = function(artist){
 
 	var request = {id: artist
@@ -82,15 +83,13 @@ var getRelatedArtists = function(artist){
      	
      	
 	 })
-     .fail(function(jqXHR, error, errorThrown){
+     .fail(function(result){
 		var errorElem = showError(error);
 		$('.search-results').append(errorElem);
 		});
-
-
 };
 
-
+/*Gets top track for each of the related artists*/
 var getRelatedTracks = function(artist){
 	var request = {id: artist.id,
 				country: 'US',
@@ -107,70 +106,64 @@ var getRelatedTracks = function(artist){
 
 	 	var widget = showSongs(artist);
 		$('.results').append(widget);
-
-	 
-
-
 	 })
 	 
-     .fail(function(jqXHR, error, errorThrown){
+     .fail(function(result){
 		var errorElem = showError(error);
 		$('.search-results').append(errorElem);
 		});
 };
 
-
+/*creates the Spotify widgets with top songs for each artist*/
 var showSongs = function(artist){
 	
 	var result = $('.templates .songs').clone();
 
 	var songWidget = result.find('.frame');
 	songWidget.attr('src', "https://embed.spotify.com/?uri=" + artist.uri);
-	console.log(artist.uri);
 
 	var title = result.find('.name');
 	title.text(artist.names);
-
 
 	return result;
 
 }
 
+/*Gets the URI for the track for the iframe*/
 var getURI = function(result){
 	var uri = result.tracks[0].uri;
 	return uri;
 }
 
+/*Get's the artist's top track*/
 var getTrack = function(result){
 	var track = result.tracks[0].name;
 	return track;
 };
 
+/*Pulls the Spotfiy ID of the artist searched for*/
 var getOriginalArtistID = function(result){
 	var id = result.artists.items[0].id;
 	return id;
 };
 
+/*Gets the name of the artist searched for*/
 var getOriginalArtistName = function(result){
 	var artist = result.artists.items[0].name;
 	return artist;
 };
 
+/*Gets the Spotify ID of the related artist*/
 var getRelatedArtistID = function(result, index){
 	var id = result.artists[index].id;
 	return id;
 };
 
+/*Gets the name of the related artist*/
 var getRelatedArtistName = function(result, index){
 	var artist = result.artists[index].name;
 	return artist;
 };
-
-var getTracks = function(result){
-	var track = result.tracks.album[0].name;
-	console.log(track);
-}
-
 
 
 // takes error string and turns it into displayable DOM element
